@@ -27,25 +27,6 @@ localhost:9000
 
 ## Frontend
 
-
-**IMPORTANT**:  
-Frontend communicates with API at the address
-
-http://backend:9000
-
-`backend` must be added to /etc/hosts.
-
-Open the file `etc/hosts`
-```
-sudo nano etc/hosts
-```
-
-add the line
-
-```
-localhost backend
-```
-
 Please note: Node 8.9 or above required (https://nodejs.org/en/download/).
 
 (Want to run multiple node versions? Please take a look at https://github.com/tj/n)
