@@ -68,17 +68,34 @@ Frontend will then be served on
 localhost:4200
 ```
 
-# How to use docker-compose
+## Run tests using docker-compose
 
-The command
+Move to branch `docker` and build containers
+
+```bash
+git checkout docker
+sudo docker-compose build
+```
+
+### run back-end tests
+
+```bash
+sudo docker-compose run backend /app/backend/backend.test
+```
+
+### Run front-end tests
+
+The command:
 
 ```bash
 sudo docker-compose up --build
 ```
 
-will run the API at `backend:9000` and the frontend tests (both e2e and unit-tests).
+will run two containers:
+- Go API
+- Front-end unit and e2e tests.
 
-You can also override the command using the `--entrypoint` options:
+You can also override the command using the `--entrypoint` option:
 
 ```bash
 sudo docker-compose run --entrypoint="npm run e2e" frontend 
