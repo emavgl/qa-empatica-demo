@@ -1,0 +1,18 @@
+version: '2'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "9000:9000"
+    restart: always
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/workdir
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    entrypoint:
+    - bash
+    - run_tests.sh

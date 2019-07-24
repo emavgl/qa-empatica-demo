@@ -5,7 +5,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { AuthService } from './auth.service';
 
 describe('ApiService', () => {
-  let baseUrl = "http://localhost:9000";
+  let baseUrl = "http://backend:9000";
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {

@@ -52,7 +52,7 @@ describe('HomeComponent', () => {
   }));
 
   it('should make an api call getting information of the user with id 1', inject([AuthService], (authService: AuthService) => {
-    let baseUrl = "http://localhost:9000";
+    let baseUrl = "http://backend:9000";
 
     authService.setToken("mockToken");
     TestBed.createComponent(HomeComponent); // trigger the ngInit

@@ -130,7 +130,7 @@ describe('LoginComponent', () => {
   it('should make a login call and redirect to home on valid credentials', inject([AuthService], (authService: AuthService) => {      
     (component as any).email = "email@gmail.com";
     (component as any).password = "password";
-    let baseUrl = "http://localhost:9000";
+    let baseUrl = "http://backend:9000";
     component.do();
 
     const mockApiResponse = {
@@ -153,7 +153,7 @@ describe('LoginComponent', () => {
     spyOn((component as any).snackBar, 'open');
     component.do();
 
-    let baseUrl = "http://localhost:9000";
+    let baseUrl = "http://backend:9000";
     const req = httpTestingController.expectNone(baseUrl + "/login");
     expect(authService.getToken()).toBe(null);
     expect((component as any).snackBar.open).toHaveBeenCalledWith('Please fill the missing fields');
@@ -166,7 +166,7 @@ describe('LoginComponent', () => {
     spyOn((component as any).snackBar, 'open');
     component.do();
 
-    let baseUrl = "http://localhost:9000";
+    let baseUrl = "http://backend:9000";
     const req = httpTestingController.expectOne(baseUrl + "/login");
     req.flush('', { status: 403, statusText: 'Invalid Credentials' });
     expect((component as any).snackBar.open).toHaveBeenCalledWith('Invalid login');

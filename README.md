@@ -27,6 +27,25 @@ localhost:9000
 
 ## Frontend
 
+
+**IMPORTANT**:  
+Frontend communicates with API at the address
+
+http://backend:9000
+
+`backend` must be added to /etc/hosts.
+
+Open the file `etc/hosts`
+```
+sudo nano etc/hosts
+```
+
+add the line
+
+```
+localhost backend
+```
+
 Please note: Node 8.9 or above required (https://nodejs.org/en/download/).
 
 (Want to run multiple node versions? Please take a look at https://github.com/tj/n)
@@ -47,4 +66,20 @@ npm install
 Frontend will then be served on 
 ```
 localhost:4200
+```
+
+# How to use docker-compose
+
+The command
+
+```bash
+sudo docker-compose up --build
+```
+
+will run the API at `backend:9000` and the frontend tests (both e2e and unit-tests).
+
+You can also override the command using the `--entrypoint` options:
+
+```bash
+sudo docker-compose run --entrypoint="npm run e2e" frontend 
 ```

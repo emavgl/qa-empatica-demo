@@ -24,7 +24,7 @@ func main() {
 		OptionsPassthrough: false,
 	})
 	handler := c.Handler(r)
-	log.Fatal(http.ListenAndServe(":9000", handler))
+	log.Fatal(http.ListenAndServe("0.0.0.0:9000", handler))
 }
 
 func tokenValidation(next http.Handler) http.Handler {

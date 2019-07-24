@@ -7,7 +7,7 @@ import { AuthService } from "./auth.service";
   providedIn: "root"
 })
 export class ApiService {
-  private baseUrl = "http://localhost:9000";
+  private baseUrl = "http://backend:9000";
   constructor(private auth: AuthService, private http: HttpClient) {}
 
   login(email: string, password: string) : Observable<any> {
